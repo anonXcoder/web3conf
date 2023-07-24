@@ -1,0 +1,450 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "P2pxConfig",
+  "sourceName": "contracts/P2pxConfig.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "_admins",
+          "type": "address[]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_buyINRPrice",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_sellINRPrice",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_limitPerTxn",
+          "type": "uint256"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "buyMin",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "buyMax",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "sellMin",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "sellMax",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct P2pxConfig.ProcessingTimeSecs",
+          "name": "_processingTime",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "admin",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "currExchangeINRPrice",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "updatedExchangeINRPrice",
+          "type": "uint256"
+        }
+      ],
+      "name": "BuyPriceUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "admin",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "currLimit",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "updatedLimit",
+          "type": "uint256"
+        }
+      ],
+      "name": "LimitPerTxUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "admin",
+          "type": "address"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "buyMin",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "buyMax",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "sellMin",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "sellMax",
+              "type": "uint256"
+            }
+          ],
+          "indexed": false,
+          "internalType": "struct P2pxConfig.ProcessingTimeSecs",
+          "name": "currTime",
+          "type": "tuple"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "buyMin",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "buyMax",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "sellMin",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "sellMax",
+              "type": "uint256"
+            }
+          ],
+          "indexed": false,
+          "internalType": "struct P2pxConfig.ProcessingTimeSecs",
+          "name": "updatedTime",
+          "type": "tuple"
+        }
+      ],
+      "name": "ProcessingTimeUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "admin",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "currExchangeINRPrice",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "updatedExchangeINRPrice",
+          "type": "uint256"
+        }
+      ],
+      "name": "SellPriceUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "admin",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "currStatus",
+          "type": "bool"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "updatedStatus",
+          "type": "bool"
+        }
+      ],
+      "name": "UpdatedExchangeStatus",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "admins",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "buyINRPrice",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "exchangeStatus",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_admin",
+          "type": "address"
+        }
+      ],
+      "name": "isAdmin",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "limitPerTxn",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "processingTime",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "buyMin",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "buyMax",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "sellMin",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "sellMax",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "sellINRPrice",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_buyINRPrice",
+          "type": "uint256"
+        }
+      ],
+      "name": "setBuyPrice",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_sellINRPrice",
+          "type": "uint256"
+        }
+      ],
+      "name": "setSellPrice",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "toggleExchangeStatus",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_admin",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "_status",
+          "type": "bool"
+        }
+      ],
+      "name": "updateAdmin",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_limitPerTxn",
+          "type": "uint256"
+        }
+      ],
+      "name": "updateLimitPerTxn",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "buyMin",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "buyMax",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "sellMin",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "sellMax",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct P2pxConfig.ProcessingTimeSecs",
+          "name": "_processingTime",
+          "type": "tuple"
+        }
+      ],
+      "name": "updateProcessingTime",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x60806040523480156200001157600080fd5b5060405162000aa138038062000aa1833981016040819052620000349162000196565b60005b8551811015620000a3576001600360008884815181106200005c576200005c62000294565b6020908102919091018101516001600160a01b03168252810191909152604001600020805460ff1916911515919091179055806200009a81620002aa565b91505062000037565b506000805460ff19166001908117909155939093556002919091556004558051600555602081015160065560408101516007556060015160085550620002d2565b634e487b7160e01b600052604160045260246000fd5b604051601f8201601f191681016001600160401b0381118282101715620001255762000125620000e4565b604052919050565b6000608082840312156200014057600080fd5b604051608081016001600160401b0381118282101715620001655762000165620000e4565b8060405250809150825181526020830151602082015260408301516040820152606083015160608201525092915050565b60008060008060006101008688031215620001b057600080fd5b85516001600160401b0380821115620001c857600080fd5b818801915088601f830112620001dd57600080fd5b8151602082821115620001f457620001f4620000e4565b8160051b925062000207818401620000fa565b828152928401810192818101908c8511156200022257600080fd5b948201945b848610156200025c57855193506001600160a01b03841684146200024b5760008081fd5b838252948201949082019062000227565b809a505050808a015197505050505060408601519250606086015191506200028887608088016200012d565b90509295509295909350565b634e487b7160e01b600052603260045260246000fd5b600060018201620002cb57634e487b7160e01b600052601160045260246000fd5b5060010190565b6107bf80620002e26000396000f3fe608060405234801561001057600080fd5b50600436106100df5760003560e01c8063429b62e51161008c57806367e37e9c1161006657806367e37e9c146101b857806370a26ec4146101ee578063ef5fba5814610201578063fc6634b91461020a57600080fd5b8063429b62e51461016f57806363ae8d6c14610192578063670a6fd9146101a557600080fd5b806315015022116100bd578063150150221461011e57806324d7806c1461013b5780632952c7151461016757600080fd5b806305436c9a146100e45780630cf3772a146101005780630f547f6114610109575b600080fd5b6100ed60025481565b6040519081526020015b60405180910390f35b6100ed60045481565b61011c6101173660046106ab565b61021d565b005b60005461012b9060ff1681565b60405190151581526020016100f7565b61012b6101493660046106e0565b6001600160a01b031660009081526003602052604090205460ff1690565b61011c6102bb565b61012b61017d3660046106e0565b60036020526000908152604090205460ff1681565b61011c6101a03660046106ab565b610365565b61011c6101b3366004610702565b6103fe565b6005546006546007546008546101ce9392919084565b6040805194855260208501939093529183015260608201526080016100f7565b61011c6101fc36600461073e565b610527565b6100ed60015481565b61011c6102183660046106ab565b610612565b3360009081526003602052604090205460ff1615156001146102725760405162461bcd60e51b81526020600482015260096024820152682737ba1030b236b4b760b91b60448201526064015b60405180910390fd5b60045460408051338152602081019290925281018290527f1054a68460385664835b09cd084878bd8978b239f98aaa41d76c2f67aa3a17db9060600160405180910390a1600455565b3360009081526003602052604090205460ff16151560011461030b5760405162461bcd60e51b81526020600482015260096024820152682737ba1030b236b4b760b91b6044820152606401610269565b6000546040805133815260ff909216158015602084015282820152517fa27f4c114c8ec58a8aa11e8ec2ab1f6529633ef97b950eab91ca636d1e1ddcee9181900360600190a16000805460ff19811660ff90911615179055565b3360009081526003602052604090205460ff1615156001146103b55760405162461bcd60e51b81526020600482015260096024820152682737ba1030b236b4b760b91b6044820152606401610269565b60015460408051338152602081019290925281018290527f864b4a7634c50d471ef00c563b0fbbe87ab001a43f43529ed11306da99d6f49b9060600160405180910390a1600155565b3360009081526003602052604090205460ff16151560011461044e5760405162461bcd60e51b81526020600482015260096024820152682737ba1030b236b4b760b91b6044820152606401610269565b6001600160a01b0382166104a45760405162461bcd60e51b815260206004820152600f60248201527f496e76616c6964206164647265737300000000000000000000000000000000006044820152606401610269565b336001600160a01b038316036104fc5760405162461bcd60e51b815260206004820152601e60248201527f43616e6e6f74206368616e6765206f776e2061646d696e2073746174757300006044820152606401610269565b6001600160a01b03919091166000908152600360205260409020805460ff1916911515919091179055565b3360009081526003602052604090205460ff1615156001146105775760405162461bcd60e51b81526020600482015260096024820152682737ba1030b236b4b760b91b6044820152606401610269565b60408051338152600554602080830191909152600654828401526007546060808401919091526008546080840152845160a08401529084015160c08301528383015160e083015283015161010082015290517f8aa5a3ebb2d76af3aaf4ccb5cb3edb0d8d70157c103cb948938b4cc62f0ae402918190036101200190a180516005556020810151600655604081015160075560600151600855565b3360009081526003602052604090205460ff1615156001146106625760405162461bcd60e51b81526020600482015260096024820152682737ba1030b236b4b760b91b6044820152606401610269565b60025460408051338152602081019290925281018290527fb888695bc15389e1cfe3d3ed17cdae9ed75a77eb52327bbdbe62a67806f668729060600160405180910390a1600255565b6000602082840312156106bd57600080fd5b5035919050565b80356001600160a01b03811681146106db57600080fd5b919050565b6000602082840312156106f257600080fd5b6106fb826106c4565b9392505050565b6000806040838503121561071557600080fd5b61071e836106c4565b91506020830135801515811461073357600080fd5b809150509250929050565b60006080828403121561075057600080fd5b6040516080810181811067ffffffffffffffff8211171561078157634e487b7160e01b600052604160045260246000fd5b806040525082358152602083013560208201526040830135604082015260608301356060820152809150509291505056fea164736f6c6343000811000a",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100df5760003560e01c8063429b62e51161008c57806367e37e9c1161006657806367e37e9c146101b857806370a26ec4146101ee578063ef5fba5814610201578063fc6634b91461020a57600080fd5b8063429b62e51461016f57806363ae8d6c14610192578063670a6fd9146101a557600080fd5b806315015022116100bd578063150150221461011e57806324d7806c1461013b5780632952c7151461016757600080fd5b806305436c9a146100e45780630cf3772a146101005780630f547f6114610109575b600080fd5b6100ed60025481565b6040519081526020015b60405180910390f35b6100ed60045481565b61011c6101173660046106ab565b61021d565b005b60005461012b9060ff1681565b60405190151581526020016100f7565b61012b6101493660046106e0565b6001600160a01b031660009081526003602052604090205460ff1690565b61011c6102bb565b61012b61017d3660046106e0565b60036020526000908152604090205460ff1681565b61011c6101a03660046106ab565b610365565b61011c6101b3366004610702565b6103fe565b6005546006546007546008546101ce9392919084565b6040805194855260208501939093529183015260608201526080016100f7565b61011c6101fc36600461073e565b610527565b6100ed60015481565b61011c6102183660046106ab565b610612565b3360009081526003602052604090205460ff1615156001146102725760405162461bcd60e51b81526020600482015260096024820152682737ba1030b236b4b760b91b60448201526064015b60405180910390fd5b60045460408051338152602081019290925281018290527f1054a68460385664835b09cd084878bd8978b239f98aaa41d76c2f67aa3a17db9060600160405180910390a1600455565b3360009081526003602052604090205460ff16151560011461030b5760405162461bcd60e51b81526020600482015260096024820152682737ba1030b236b4b760b91b6044820152606401610269565b6000546040805133815260ff909216158015602084015282820152517fa27f4c114c8ec58a8aa11e8ec2ab1f6529633ef97b950eab91ca636d1e1ddcee9181900360600190a16000805460ff19811660ff90911615179055565b3360009081526003602052604090205460ff1615156001146103b55760405162461bcd60e51b81526020600482015260096024820152682737ba1030b236b4b760b91b6044820152606401610269565b60015460408051338152602081019290925281018290527f864b4a7634c50d471ef00c563b0fbbe87ab001a43f43529ed11306da99d6f49b9060600160405180910390a1600155565b3360009081526003602052604090205460ff16151560011461044e5760405162461bcd60e51b81526020600482015260096024820152682737ba1030b236b4b760b91b6044820152606401610269565b6001600160a01b0382166104a45760405162461bcd60e51b815260206004820152600f60248201527f496e76616c6964206164647265737300000000000000000000000000000000006044820152606401610269565b336001600160a01b038316036104fc5760405162461bcd60e51b815260206004820152601e60248201527f43616e6e6f74206368616e6765206f776e2061646d696e2073746174757300006044820152606401610269565b6001600160a01b03919091166000908152600360205260409020805460ff1916911515919091179055565b3360009081526003602052604090205460ff1615156001146105775760405162461bcd60e51b81526020600482015260096024820152682737ba1030b236b4b760b91b6044820152606401610269565b60408051338152600554602080830191909152600654828401526007546060808401919091526008546080840152845160a08401529084015160c08301528383015160e083015283015161010082015290517f8aa5a3ebb2d76af3aaf4ccb5cb3edb0d8d70157c103cb948938b4cc62f0ae402918190036101200190a180516005556020810151600655604081015160075560600151600855565b3360009081526003602052604090205460ff1615156001146106625760405162461bcd60e51b81526020600482015260096024820152682737ba1030b236b4b760b91b6044820152606401610269565b60025460408051338152602081019290925281018290527fb888695bc15389e1cfe3d3ed17cdae9ed75a77eb52327bbdbe62a67806f668729060600160405180910390a1600255565b6000602082840312156106bd57600080fd5b5035919050565b80356001600160a01b03811681146106db57600080fd5b919050565b6000602082840312156106f257600080fd5b6106fb826106c4565b9392505050565b6000806040838503121561071557600080fd5b61071e836106c4565b91506020830135801515811461073357600080fd5b809150509250929050565b60006080828403121561075057600080fd5b6040516080810181811067ffffffffffffffff8211171561078157634e487b7160e01b600052604160045260246000fd5b806040525082358152602083013560208201526040830135604082015260608301356060820152809150509291505056fea164736f6c6343000811000a",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
