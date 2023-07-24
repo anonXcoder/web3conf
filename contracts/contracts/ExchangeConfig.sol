@@ -1,12 +1,12 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.9;
+pragma solidity ^0.8.17;
 
 contract ExchangeConfig {
     struct ProcessingTimeSecs {
-        uint256 buyMin;
-        uint256 buyMax;
-        uint256 sellMin;
-        uint256 sellMax;
+    	uint256 buyMin;
+    	uint256 buyMax;
+    	uint256 sellMin;
+    	uint256 sellMax;
     }
     bool public exchangeStatus;
     uint256 public buyINRPrice;
@@ -84,12 +84,12 @@ contract ExchangeConfig {
     }
 
     function updateLimitPerTxn(uint256 _limitPerTxn) public onlyAdmin {
-        emit LimitPerTxUpdated(msg.sender, limitPerTxn, _limitPerTxn);
-        limitPerTxn = _limitPerTxn;
+    	emit LimitPerTxUpdated(msg.sender, limitPerTxn, _limitPerTxn);
+    	limitPerTxn = _limitPerTxn;
     }
 
     function updateProcessingTime(ProcessingTimeSecs memory _processingTime) public onlyAdmin {
-        emit ProcessingTimeUpdated(msg.sender, processingTime, _processingTime);
-        processingTime = _processingTime;
+    	emit ProcessingTimeUpdated(msg.sender, processingTime, _processingTime);
+    	processingTime = _processingTime;
     }
 }

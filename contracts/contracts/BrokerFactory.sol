@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.9;
+pragma solidity ^0.8.17;
 
 import { ExchangeConfig } from './ExchangeConfig.sol';
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 // The BrokerFactory contract manages the listing of brokers and their associated escrow contracts.
-contract MerchantRegistry {
+contract BrokerFactory {
 
 	// BrokerLimits struct contains the minimum and maximum limits for buy and sell orders.
     struct BrokerLimits {
